@@ -8,7 +8,8 @@ setup_fnm() {
   echo "Starting FNM installation..."
   
   curl -fsSL https://fnm.vercel.app/install | bash
-  
+  source ~/.bashrc 
+
   echo "✅ FNM installed"
 }
 
