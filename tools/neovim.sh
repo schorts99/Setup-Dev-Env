@@ -7,7 +7,7 @@ setup_neovim() {
     return 0
   fi
 
-  echo "Starting NeoVim core installation..."
+  echo "Starting NeoVim installation..."
 
   wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz
   tar xzvf nvim-linux-x86_64.tar.gz
@@ -17,3 +17,4 @@ setup_neovim() {
   
   echo "✅ NeoVim installed"
 }
+
