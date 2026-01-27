@@ -1,5 +1,3 @@
-#!/bin/bash
-
 setup_neovim() {
   if command -v nvim >/dev/null 2>&1; then
     echo "✅ NeoVim is already installed"
