@@ -8,6 +8,7 @@ setup_git() {
   echo "Starting Git installation..."
 
   sudo apt-get install git
+  git config --global color.ui true
 
   echo "✅ Git installed"
 }
