@@ -11,6 +11,7 @@ source ./tools/nvchad.sh
 source ./tools/claude_code.sh
 source ./tools/copilot.sh
 source ./tools/gemini.sh
+source ./tools/sdkman.sh
 source ./tools/http_client.sh
 
 echo "-------------------------------------------------------"
@@ -28,7 +29,8 @@ echo "8. NvChad: A blazing fast Neovim config providing solid defaults and a bea
 echo "9. Claude Code: An agentic coding tool that lives in your terminal."
 echo "10. Copilot: An AI-powered coding assistance directly to your command line."
 echo "11. Gemini: An AI agent that brings the power of Gemini directly into your terminal."
-echo "12. HTTP Client: It allows you to run HTTP requests from a terminal."
+echo "12. SDKMan: Tool for managing parallel versions of multiple Software Development Kits on most Unix based systems."
+echo "13. HTTP Client: It allows you to run HTTP requests from a terminal."
 echo "-------------------------------------------------------"
 
 read -p "Do you want to proceed? (Y/n): " confirm
@@ -52,5 +54,6 @@ setup_nvchad
 setup_claude_code
 setup_copilot
 setup_gemini
+setup_sdkman
 setup_http_client
 
