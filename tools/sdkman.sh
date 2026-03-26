@@ -1,5 +1,5 @@
 setup_sdkman() {
-  if command -v sdk >/dev/null 2>&1; then
+  if [ -d "$HOME/.sdkman" ]; then
     echo "✅ SDKMan is already installed"
     
     return 0
