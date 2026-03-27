@@ -12,7 +12,6 @@ setup_sdkman() {
   fi
 
   curl -s "https://get.sdkman.io" | bash
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
 
   echo "✅ SDKMan installed"
 }
