@@ -11,7 +11,6 @@ source ./tools/nvchad.sh
 source ./tools/claude_code.sh
 source ./tools/copilot.sh
 source ./tools/gemini.sh
-source ./tools/sdkman.sh
 source ./tools/java.sh
 source ./tools/http_client.sh
 
@@ -30,20 +29,30 @@ echo "8. NvChad: A blazing fast Neovim config providing solid defaults and a bea
 echo "9. Claude Code: An agentic coding tool that lives in your terminal."
 echo "10. Copilot: An AI-powered coding assistance directly to your command line."
 echo "11. Gemini: An AI agent that brings the power of Gemini directly into your terminal."
-echo "12. SDKMan: Tool for managing parallel versions of multiple Software Development Kits on most Unix based systems."
-echo "13. Java: Programming language and development platform."
-echo "14. HTTP Client: It allows you to run HTTP requests from a terminal."
 echo "-------------------------------------------------------"
 
 read -p "Do you want to proceed? (Y/n): " confirm
 confirm=${confirm:-Y}
 
 if [[ $confirm =~ ^[Nn]$ ]]; then
-    echo "Installation cancelled."
-    exit 0
+	echo "Installation cancelled."
+	exit 0
 fi
 
 mkdir -p ~/.local/bin
+
+PATH_LINE='export PATH="$HOME/.local/bin:$PATH"'
+
+if [[ "$SHELL" == *"zsh"* ]]; then
+  CONF_FILE="$HOME/.zshrc"
+else
+  CONF_FILE="$HOME/.bashrc"
+fi
+
+if ! grep -Fq "$PATH_LINE" "$CONF_FILE"; then
+  echo "$PATH_LINE" >> "$CONF_FILE"
+  source "$CONF_FILE"
+fi
 
 setup_homebrew
 setup_git
@@ -56,7 +65,3 @@ setup_nvchad
 setup_claude_code
 setup_copilot
 setup_gemini
-setup_sdkman
-setup_java
-setup_http_client
-
