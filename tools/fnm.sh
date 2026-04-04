@@ -7,8 +7,7 @@ setup_fnm() {
 
   echo "Starting FNM installation..."
   
-  curl -fsSL https://fnm.vercel.app/install | bash
-  source ~/.bashrc 
+  brew install fnm
 
   echo "✅ FNM installed"
 }
