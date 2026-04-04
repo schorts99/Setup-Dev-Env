@@ -11,4 +11,3 @@ setup_copilot() {
 
   echo "✅ Copilot installed"
 }
-

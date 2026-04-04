@@ -11,4 +11,3 @@ setup_claude_code() {
 
   echo "✅ Claude Code installed"
 }
-
