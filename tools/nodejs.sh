@@ -10,6 +10,15 @@ setup_nodejs() {
   LATEST_NODE_VERSION=$(fnm list-remote | tail -1)
   fnm install $LATEST_NODE_VERSION
 
+  if [[ "$SHELL" == *"zsh"* ]]; then
+    echo >> /Users/$USER/.zshrc
+    echo 'eval "$(fnm env --use-on-cd --shell zsh)"' >> /Users/$USER/.zshrc
+    source /Users/$USER/.zshrc
+  else
+    echo >> /home/$USER/.bashrc
+    echo 'eval "$(fnm env --use-on-cd --shell bash)"' >> /home/$USER/.bashrc
+    source /home/$USER/.bashrc
+  fi
+
   echo "✅ Node.js installed"
 }
-
