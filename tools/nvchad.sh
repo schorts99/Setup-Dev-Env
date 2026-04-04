@@ -16,15 +16,14 @@ setup_nvchad() {
   fi
 
   if ! command -v gcc >/dev/null 2>&1; then
-    sudo apt-get install gcc
+    brew install gcc
   fi
 
   if ! command -v make >/dev/null 2>&1; then
-    sudo apt-get install make
+    brew install make
   fi
 
   git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
 
   echo "✅ NvChad installed"
 }
-
