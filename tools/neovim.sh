@@ -7,11 +7,7 @@ setup_neovim() {
 
   echo "Starting NeoVim installation..."
 
-  wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.tar.gz
-  tar xzvf nvim-linux-x86_64.tar.gz
-  rm nvim-linux-x86_64.tar.gz
-  mv nvim-linux-x86_64 ~/.nvim
-  ln -sf ~/.nvim/bin/nvim ~/.local/bin/nvim
+  brew install neovim
   
   echo "✅ NeoVim installed"
 }
