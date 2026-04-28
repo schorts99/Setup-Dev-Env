@@ -23,9 +23,9 @@ config_indentation() {
       perl -i -pe "s|\Q$pattern\E\s*=.*|$new_line|" "$conf"
       echo "  ✅ Updated $key"
     else
-	  if [ "$header_added" = false ]; then
+			if [ "$header_added" = false ]; then
         echo "" >> "$conf"
-		echo "-- Indentation" >> "$conf"
+				echo "-- Indentation" >> "$conf"
         header_added=true
       fi
 
