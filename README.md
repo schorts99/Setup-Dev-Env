@@ -64,3 +64,7 @@ The configuration logic is modular and idempotent, ensuring that settings are ap
   - Advanced LSP: Enables Inlay Hints (parameter names, variable types, enum values) for deep code clarity.
   - DX Features: Enables updateImportsOnFileMove and function call suggestions.
   - React Support: Full formatting and LSP support for .tsx files, including nvim-ts-autotag integration for JSX tags.
+- **Shell Script Environment**:
+  - LSP Integration: Configures bashls for Bash, Sh, and Zsh support.
+  - Linting: Integrated support for shellcheck (via LSP) to catch common scripting pitfalls.
+  - Formatting: Uses shfmt through conform.nvim to keep scripts clean and readable.
