@@ -57,4 +57,7 @@ The configuration logic is modular and idempotent, ensuring that settings are ap
   - Uses Tabs instead of spaces.
   - Configures `tabstop`, `shiftwidth`, and `softtabstop` to `2`.
   - Automatically adds a clean -- Indentation Settings header in `init.lua` if missing.
-- More configurations coming soon...
+- **JavaScript Environment**:
+  - LSP Integration: Automatically configures `vtsls` for intelligent code completion and error checking.
+  - Future-Proof: Utilizes the native `vim.lsp.config` (Neovim 0.11+ standard) for LSP management.
+  - Formatting: Integrates with `conform.nvim` to enforce prettier on save.
