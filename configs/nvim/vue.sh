@@ -8,16 +8,19 @@ config_vue() {
 
 	cat << "EOF" > "$VUE_CONF_FILE"
 if vim.lsp.config then
-	vim.lsp.config("volar", {
+	vim.lsp.config("vue_ls", {
 		filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
 		init_options = {
 			vue = {
 				hybridMode = true,
 			},
+			typescript = {
+				tsdk = "node_modules/typescript/lib",
+			},
 		},
 	})
 
-	vim.lsp.enable("volar")
+	vim.lsp.enable("vue_ls")
 end
 
 local status, conform = pcall(require, "conform")
