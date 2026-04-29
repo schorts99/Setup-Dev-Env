@@ -4,6 +4,7 @@ source "$DIR/nvim/indentation.sh"
 source "$DIR/nvim/js.sh"
 source "$DIR/nvim/ts.sh"
 source "$DIR/nvim/shell.sh"
+source "$DIR/nvim/node.sh"
 
 config_nvim() {
   if ! command -v nvim >/dev/null 2>&1; then
@@ -25,6 +26,7 @@ config_nvim() {
 	config_js
 	config_ts
 	config_shell
+	config_node
 
 	LUA_MODULE="configs.$USER"
 	IMPORT_CMD="require('$LUA_MODULE')"
@@ -34,8 +36,8 @@ config_nvim() {
 	if grep -qF "$IMPORT_CMD" "$ROOT_INIT"; then
     echo "  ✅ Root init.lua already imports $LUA_MODULE"
 	else
-			echo -e "\n$IMPORT_CMD" >> "$ROOT_INIT"
-			echo "  ➕ Added $IMPORT_CMD to $ROOT_INIT"
+		echo -e "\n$IMPORT_CMD" >> "$ROOT_INIT"
+		echo "  ➕ Added $IMPORT_CMD to $ROOT_INIT"
 	fi
 
   echo "✅ NeoVim configured"

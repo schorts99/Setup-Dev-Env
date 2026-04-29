@@ -14,6 +14,7 @@ confirm=${confirm:-Y}
 
 if [[ $confirm =~ ^[Nn]$ ]]; then
 	echo "Configuration cancelled."
+
 	exit 0
 fi
 
