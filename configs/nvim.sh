@@ -3,6 +3,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$DIR/nvim/indentation.sh"
 source "$DIR/nvim/js.sh"
 source "$DIR/nvim/ts.sh"
+source "$DIR/nvim/shell.sh"
 
 config_nvim() {
   if ! command -v nvim >/dev/null 2>&1; then
@@ -23,6 +24,7 @@ config_nvim() {
 
 	config_js
 	config_ts
+	config_shell
 
 	LUA_MODULE="configs.$USER"
 	IMPORT_CMD="require('$LUA_MODULE')"
