@@ -50,6 +50,8 @@ if status then
 end
 EOF
 
+	echo "  ✅ Configuration file created"
+
 	NEST_MODULE="configs.$USER.nest"
 	NEST_IMPORT="require('$NEST_MODULE')"
 

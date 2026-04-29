@@ -6,6 +6,7 @@ source "$DIR/nvim/ts.sh"
 source "$DIR/nvim/shell.sh"
 source "$DIR/nvim/node.sh"
 source "$DIR/nvim/nest.sh"
+source "$DIR/nvim/vue.sh"
 
 config_nvim() {
   if ! command -v nvim >/dev/null 2>&1; then
@@ -29,6 +30,7 @@ config_nvim() {
 	config_shell
 	config_node
 	config_nest
+	config_vue
 
 	LUA_MODULE="configs.$USER"
 	IMPORT_CMD="require('$LUA_MODULE')"
