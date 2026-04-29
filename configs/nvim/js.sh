@@ -1,12 +1,16 @@
 config_js() {
 	echo "Configuring JS"
 
+	pnpm add -g typescript typescript-language-server vscode-langservers-extracted prettier
+
+	echo "  ✅ Dependencies installed"
+
 	NVIM_DIR="$HOME/.config/nvim"
 	CONF_DIR="$NVIM_DIR/lua/configs/$USER"
 	JS_CONF_FILE="$CONF_DIR/js.lua"
 	MAIN_INIT="$CONF_DIR/init.lua"
 
-cat << "EOF" > "$JS_CONF_FILE"
+	cat << "EOF" > "$JS_CONF_FILE"
 if vim.lsp.config then
   vim.lsp.config("vtsls", {
     settings = {
