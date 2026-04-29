@@ -1,7 +1,7 @@
 config_js() {
-	echo "Configuring JS"
+	echo "Configuring JavaScript"
 
-	pnpm add -g typescript typescript-language-server vscode-langservers-extracted prettier
+	pnpm add -g @vtsls/language-server typescript typescript-language-server vscode-langservers-extracted prettier
 
 	echo "  ✅ Dependencies installed"
 
@@ -14,7 +14,8 @@ config_js() {
 if vim.lsp.config then
   vim.lsp.config("vtsls", {
     settings = {
-      typescript = {
+      javascript = {
+        suggest = { completeFunctionCalls = true },
         inlayHints = {
           parameterNames = { enabled = "all" },
           variableTypes = { enabled = true },
@@ -22,21 +23,15 @@ if vim.lsp.config then
       },
     },
   })
-    
-  vim.lsp.enable("vtsls")
-else
-  local status, lspconfig = pcall(require, "lspconfig")
 
-  if status then
-    lspconfig.vtsls.setup({})
-  end
+  vim.lsp.enable("vtsls")
 end
 
 local status, conform = pcall(require, "conform")
 
 if status then
   conform.formatters_by_ft.javascript = { "prettier" }
-  conform.formatters_by_ft.typescript = { "prettier" }
+  conform.formatters_by_ft.javascriptreact = { "prettier" }
 end
 EOF
 	
@@ -52,5 +47,5 @@ EOF
 		echo "  ➕ Added $JS_IMPORT to $MAIN_INIT"
 	fi
 
-	echo "🎉 JS configured"
+	echo "🎉 JavaScript configured"
 }

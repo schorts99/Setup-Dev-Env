@@ -58,6 +58,9 @@ The configuration logic is modular and idempotent, ensuring that settings are ap
   - Configures `tabstop`, `shiftwidth`, and `softtabstop` to `2`.
   - Automatically adds a clean -- Indentation Settings header in `init.lua` if missing.
 - **JavaScript Environment**:
-  - LSP Integration: Automatically configures `vtsls` for intelligent code completion and error checking.
-  - Future-Proof: Utilizes the native `vim.lsp.config` (Neovim 0.11+ standard) for LSP management.
-  - Formatting: Integrates with `conform.nvim` to enforce prettier on save.
+  - LSP Integration: Configures vtsls using the native vim.lsp.config (Neovim 0.11+) standard.
+  - Formatting: Uses `conform.nvim` to enforce prettier for both `.js` and `.jsx` files.
+- **TypeScript Environment**:
+  - Advanced LSP: Enables Inlay Hints (parameter names, variable types, enum values) for deep code clarity.
+  - DX Features: Enables updateImportsOnFileMove and function call suggestions.
+  - React Support: Full formatting and LSP support for .tsx files, including nvim-ts-autotag integration for JSX tags.
