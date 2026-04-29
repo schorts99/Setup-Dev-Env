@@ -1,10 +1,33 @@
 config_shell() {
 	echo "Configuring Shell"
 
-	pnpm add -g bash-language-server
-	brew install shfmt shellcheck
+	GLOBAL_PKGS=(
+		"bash-language-server"
+	)
+	BREW_PKGS=(
+		"shfmt"
+		"shellcheck"
+	)
+	local pnpm_dependencies_already_installed=false
+	local brew_dependencies_already_installed=false
 
-	echo "  ✅ Dependencies installed"
+	if pnpm list -g "${GLOBAL_PKGS[0]}" > /dev/null 2>&1; then
+		pnpm_dependencies_already_installed=true
+	else
+		pnpm add -g "${GLOBAL_PKGS[@]}"
+	fi
+
+	if brew list "${BREW_TOOLS[@]}" &> /dev/null; then
+		brew_dependencies_already_installed=true
+else
+    brew install "${BREW_TOOLS[@]}"
+fi
+
+	if [[ "$pnpm_dependencies_already_installed" = true ]] && [[ "$brew_dependencies_already_installed" = true ]]; then
+		echo "  ✅ Dependencies already installed"
+	else
+		echo "  ➕ Dependencies installed"
+	fi
 
 	NVIM_DIR="$HOME/.config/nvim"
 	CONF_DIR="$NVIM_DIR/lua/configs/$USER"

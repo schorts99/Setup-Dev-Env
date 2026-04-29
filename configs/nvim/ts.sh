@@ -1,9 +1,19 @@
 config_ts() {
 	echo "Configuring TypeScript"
 
-	pnpm add -g @types/node @types/react @types/react-dom
+	GLOBAL_PKGS=(
+		"@types/node"
+		"@types/react"
+		"@types/react-dom"
+	)
 
-	echo "  ✅ Dependencies installed"
+	if pnpm list -g "${GLOBAL_PKGS[0]}" > /dev/null 2>&1; then
+		echo "  ✅ Dependencies already installed"
+	else
+		pnpm add -g "${GLOBAL_PKGS[@]}"
+
+		echo "  ➕ Dependencies installed"
+	fi
 
 	NVIM_DIR="$HOME/.config/nvim"
 	CONF_DIR="$NVIM_DIR/lua/configs/$USER"
