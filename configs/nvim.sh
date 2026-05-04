@@ -7,6 +7,7 @@ source "$DIR/nvim/shell.sh"
 source "$DIR/nvim/node.sh"
 source "$DIR/nvim/nest.sh"
 source "$DIR/nvim/vue.sh"
+source "$DIR/nvim/file_explorer.sh"
 
 config_nvim() {
   if ! command -v nvim >/dev/null 2>&1; then
@@ -25,6 +26,7 @@ config_nvim() {
 	mkdir -p "$CONF_DIR"
 	touch "$CONF_DIR/init.lua"
 
+	config_file_explorer
 	config_js
 	config_ts
 	config_shell
