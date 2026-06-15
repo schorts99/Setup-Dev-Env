@@ -8,6 +8,7 @@ setup_pnpm() {
   echo "Starting PNPM installation..."
 
   npm install -g pnpm@latest
+	pnpm setup
 
   echo "✅ PNPM installed"
 }

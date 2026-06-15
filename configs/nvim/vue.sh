@@ -6,33 +6,42 @@ config_vue() {
 	VUE_CONF_FILE="$CONF_DIR/vue.lua"
 	MAIN_INIT="$CONF_DIR/init.lua"
 
-	cat << "EOF" > "$VUE_CONF_FILE"
+  cat << "EOF" > "$VUE_CONF_FILE"
 if vim.lsp.config then
-	vim.lsp.config("vue_ls", {
-		filetypes = { 'vue', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact' },
-		init_options = {
-			vue = {
-				hybridMode = true,
-			},
-			typescript = {
-				tsdk = "node_modules/typescript/lib",
-			},
-		},
-	})
+  vim.lsp.config("vue_ls", {
+    filetypes = { "vue" },
+    init_options = {
+      vue = {
+        hybridMode = true,
+      },
+    },
+  })
+  vim.lsp.enable("vue_ls")
 
-	vim.lsp.enable("vue_ls")
+  vim.lsp.config("ts_ls", {
+    filetypes = { "javascript", "typescript", "vue" },
+    init_options = {
+      plugins = {
+        {
+          name = "@vue/language-server",
+          location = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+          languages = { "vue" },
+        },
+      },
+    },
+  })
+  vim.lsp.enable("ts_ls")
+
 end
 
 local status, conform = pcall(require, "conform")
-
 if status then
-	conform.formatters_by_ft.vue = { "prettier" }
+  conform.formatters_by_ft.vue = { "prettier" }
 end
 
 local status_tag, autotag = pcall(require, "nvim-ts-autotag")
-
 if status_tag then
-	autotag.setup()
+  autotag.setup()
 end
 EOF
 
@@ -47,6 +56,8 @@ EOF
 		echo -e "$VUE_IMPORT" >> "$MAIN_INIT"
 		echo "  ➕ Added $VUE_IMPORT to $MAIN_INIT"
 	fi
+
+	nvim --headless "+MasonInstall vue-language-server typescript-language-server" +qall
 
 	echo "🎉 Vue.js configured"
 }
