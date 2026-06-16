@@ -13,6 +13,7 @@ source ./tools/copilot.sh
 source ./tools/gemini.sh
 source ./tools/pyenv.sh
 source ./tools/python.sh
+source ./tools/phpbrew.sh
 
 echo "-------------------------------------------------------"
 echo "Welcome from schorts (https://github.com/schorts99)"
@@ -31,6 +32,7 @@ echo "10. Copilot: An AI-powered coding assistance directly to your command line
 echo "11. Gemini: An AI agent that brings the power of Gemini directly into your terminal."
 echo "12. PyENV: pyenv lets you easily switch between multiple versions of Python."
 echo "13. Python: Programming language that lets you work quickly and integrate systems more effectively."
+echo "14. PHPbrew: Brew & manage PHP versions in pure PHP at HOME."
 echo "-------------------------------------------------------"
 
 read -p "Do you want to proceed? (Y/n): " confirm
@@ -69,3 +71,4 @@ setup_copilot
 setup_gemini
 setup_pyenv
 setup_python
+setup_phpbrew

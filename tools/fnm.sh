@@ -11,4 +11,3 @@ setup_fnm() {
 
   echo "✅ FNM installed"
 }
-
