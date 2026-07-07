@@ -13,12 +13,14 @@ setup_nodejs() {
   if [[ "$SHELL" == *"zsh"* ]]; then
     echo >> /Users/$USER/.zshrc
     echo 'eval "$(fnm env --use-on-cd --shell zsh)"' >> /Users/$USER/.zshrc
-    source /Users/$USER/.zshrc
+    eval "$(fnm env --use-on-cd --shell zsh)"
   else
     echo >> /home/$USER/.bashrc
     echo 'eval "$(fnm env --use-on-cd --shell bash)"' >> /home/$USER/.bashrc
-    source /home/$USER/.bashrc
+    eval "$(fnm env --use-on-cd --shell bash)"
   fi
+
+  fnm use "$LATEST_NODE_VERSION" >/dev/null
 
   echo "✅ Node.js installed"
 }
