@@ -10,7 +10,7 @@ source ./tools/pnpm.sh
 source ./tools/nvchad.sh
 source ./tools/claude_code.sh
 source ./tools/copilot.sh
-source ./tools/gemini.sh
+source ./tools/antigravity.sh
 source ./tools/pyenv.sh
 source ./tools/python.sh
 source ./tools/phpbrew.sh
@@ -29,7 +29,7 @@ echo "7. PNPM: Save time. Save disk space. Supercharge your monorepos."
 echo "8. NvChad: A blazing fast Neovim config providing solid defaults and a beautiful UI."
 echo "9. Claude Code: An agentic coding tool that lives in your terminal."
 echo "10. Copilot: An AI-powered coding assistance directly to your command line."
-echo "11. Gemini: An AI agent that brings the power of Gemini directly into your terminal."
+echo "11. Antigravity: Work with Antigravity directly in your codebase. Build, debug, and ship from your terminal. Describe what you need, and Antigravity handles the rest."
 echo "12. PyENV: pyenv lets you easily switch between multiple versions of Python."
 echo "13. Python: Programming language that lets you work quickly and integrate systems more effectively."
 echo "14. PHPbrew: Brew & manage PHP versions in pure PHP at HOME."
@@ -68,7 +68,7 @@ setup_pnpm
 setup_nvchad
 setup_claude_code
 setup_copilot
-setup_gemini
+setup_antigravity
 setup_pyenv
 setup_python
 setup_phpbrew
