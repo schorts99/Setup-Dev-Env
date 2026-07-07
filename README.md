@@ -13,7 +13,7 @@ This repository is designed for developers who want a "batteries-included" termi
 - **AI Agents**:
   - **Claude Code**: Agentic coding in the terminal.
   - **GitHub Copilot**: AI assistance for the CLI.
-  - **Gemini**: Google's AI power directly in your terminal.
+  - **Antigravity**: Build, debug, and ship from your terminal.
 
 ## 🛠 Usage
 
@@ -35,6 +35,15 @@ Applies personal preferences and environment settings once tools are present.
 ```bash
 chmod +x config.sh
 ./config.sh
+```
+
+### 3. The Kitty Script (`kitty.sh`)
+
+Installs (kitty)[https://sw.kovidgoyal.net/kitty], a GPU based terminal emulator.
+
+```bash
+chmod +x kitty.sh
+./kitty.sh
 ```
 
 ## 🏗 Language Runtimes
