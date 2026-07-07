@@ -57,7 +57,7 @@ EOF
 		echo "  ➕ Added $VUE_IMPORT to $MAIN_INIT"
 	fi
 
-	nvim --headless "+MasonInstall vue-language-server typescript-language-server" +qall
+	nvim --headless "+MasonInstall vue-language-server typescript-language-server css-lsp" +qall
 
 	echo "🎉 Vue.js configured"
 }
