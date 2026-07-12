@@ -14,6 +14,7 @@ source ./tools/antigravity.sh
 source ./tools/pyenv.sh
 source ./tools/python.sh
 source ./tools/phpbrew.sh
+source ./tools/terraform.sh
 
 echo "-------------------------------------------------------"
 echo "Welcome from schorts (https://github.com/schorts99)"
@@ -33,6 +34,7 @@ echo "11. Antigravity: Work with Antigravity directly in your codebase. Build, d
 echo "12. PyENV: pyenv lets you easily switch between multiple versions of Python."
 echo "13. Python: Programming language that lets you work quickly and integrate systems more effectively."
 echo "14. PHPbrew: Brew & manage PHP versions in pure PHP at HOME."
+echo "15. Terraform: Infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently."
 echo "-------------------------------------------------------"
 
 read -p "Do you want to proceed? (Y/n): " confirm
@@ -72,3 +74,4 @@ setup_antigravity
 setup_pyenv
 setup_python
 setup_phpbrew
+setup_terraform

@@ -5,10 +5,11 @@ setup_nodejs() {
     return 0
   fi
 
-  echo "Starting Node.js installation..."
+	echo "Starting Node.js installation..."
 
   LATEST_NODE_VERSION=$(fnm list-remote | tail -1)
-  fnm install $LATEST_NODE_VERSION
+  
+	fnm install $LATEST_NODE_VERSION
 
   if [[ "$SHELL" == *"zsh"* ]]; then
     echo >> /Users/$USER/.zshrc
