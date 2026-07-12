@@ -16,34 +16,61 @@ source ./tools/python.sh
 source ./tools/phpbrew.sh
 source ./tools/terraform.sh
 
-echo "-------------------------------------------------------"
-echo "Welcome from schorts (https://github.com/schorts99)"
-echo "-------------------------------------------------------"
-echo "This script will install:"
-echo "1. Git: A free and open source distributed version control system."
-echo "2. Homebrew: The Missing Package Manager for macOS (or Linux)."
-echo "3. GitHub: A GitHub on the command line."
-echo "4. NeoVim: A hyper-extensible Vim-based text editor."
-echo "5. FNM: A fast and simple Node.js version manager."
-echo "6. Node.js: A JavaScript runtime environment."
-echo "7. PNPM: Save time. Save disk space. Supercharge your monorepos."
-echo "8. NvChad: A blazing fast Neovim config providing solid defaults and a beautiful UI."
-echo "9. Claude Code: An agentic coding tool that lives in your terminal."
-echo "10. Copilot: An AI-powered coding assistance directly to your command line."
-echo "11. Antigravity: Work with Antigravity directly in your codebase. Build, debug, and ship from your terminal. Describe what you need, and Antigravity handles the rest."
-echo "12. PyENV: pyenv lets you easily switch between multiple versions of Python."
-echo "13. Python: Programming language that lets you work quickly and integrate systems more effectively."
-echo "14. PHPbrew: Brew & manage PHP versions in pure PHP at HOME."
-echo "15. Terraform: Infrastructure as code tool that lets you build, change, and version infrastructure safely and efficiently."
-echo "-------------------------------------------------------"
+url="https://github.com/schorts99"
+text="schorts"
 
-read -p "Do you want to proceed? (Y/n): " confirm
+RED=$'\033[0;31m'
+GREEN=$'\033[0;32m'
+YELLOW=$'\033[1;33m'
+BLUE=$'\033[0;34m'
+PURPLE=$'\033[0;35m'
+CYAN=$'\033[0;36m'
+NC=$'\033[0m'
+
+echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
+echo -e "${GREEN}   /_/\    Welcome from \e]8;;${url}\e\\${text}\e]8;;\e\\${NC}"
+echo -e "${GREEN}  ( o.o )  ${NC}"
+echo -e "${GREEN}   > ^ <   Your new dev environment setup buddy!${NC}"
+echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
+echo -e ""
+echo -e "${YELLOW}This script will install the following awesome tools:${NC}"
+echo -e ""
+
+printf "${BLUE}%-18s${NC}%s\n" \
+    "01. Git"          " - Distributed version control system" \
+    "02. Homebrew"     " - The missing package manager for macOS (and Linux)" \
+    "03. GitHub CLI"   " - GitHub right in your terminal" \
+    "04. NeoVim"       " - Hyperextensible Vim-based text editor" \
+    "05. FNM"          " - Fast Node.js version manager" \
+    "06. Node.js"      " - JavaScript runtime built on Chrome's V8 engine" \
+    "07. PNPM"         " - Fast, disk-efficient package manager" \
+    "08. NvChad"       " - Beautiful, blazing-fast Neovim config" \
+    "09. Claude Code"  " - Agentic coding assistant in your terminal" \
+    "10. Copilot"      " - AI-powered coding companion for the CLI" \
+    "11. Antigravity"  " - AI agent that builds, debugs, and ships from your terminal" \
+    "12. pyenv"        " - Simple Python version management" \
+    "13. Python"       " - Powerful, versatile programming language" \
+    "14. PHPbrew"      " - PHP version manager" \
+    "15. Terraform"    " - Infrastructure as code made simple"
+
+echo -e ""
+echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
+echo -e "${GREEN}Ready to supercharge your development setup? Let's go! 🚀${NC}"
+echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
+echo -e ""
+
+echo -e "${YELLOW}───────────────────────────────────────────────────────${NC}"
+read -p "${GREEN}Do you want to proceed with the installation? (Y/n): ${NC}" confirm
 confirm=${confirm:-Y}
 
-if [[ $confirm =~ ^[Nn]$ ]]; then
-	echo "Installation cancelled."
-	exit 0
+if [[ $confirm =~ ^[Nn]$ ]] || [[ $confirm =~ ^[Nn][Oo]$ ]]; then
+    echo -e "${RED}Installation cancelled by user.${NC}"
+    echo -e "${CYAN}Come back anytime when you're ready! 👋${NC}"
+    exit 0
 fi
+
+echo -e "${GREEN}Starting installation... 🚀${NC}"
+echo -e ""
 
 mkdir -p ~/.local/bin
 
