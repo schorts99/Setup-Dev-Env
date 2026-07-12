@@ -7,6 +7,10 @@ setup_neovim() {
 
   echo "Starting NeoVim installation..."
 
+	if ! command -v unzip >/dev/null 2>&1; then
+		brew install unzip
+	fi
+
   brew install neovim
   
   echo "✅ NeoVim installed"
