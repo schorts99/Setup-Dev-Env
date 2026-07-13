@@ -48,7 +48,7 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "09. Claude Code"  " - Agentic coding assistant in your terminal" \
     "10. Copilot"      " - AI-powered coding companion for the CLI" \
     "11. Antigravity"  " - AI agent that builds, debugs, and ships from your terminal" \
-    "12. pyenv"        " - Simple Python version management" \
+    "12. PyENV"        " - Simple Python version management" \
     "13. Python"       " - Powerful, versatile programming language" \
     "14. PHPbrew"      " - PHP version manager" \
     "15. Terraform"    " - Infrastructure as code made simple"
