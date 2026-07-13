@@ -15,6 +15,7 @@ source ./tools/pyenv.sh
 source ./tools/python.sh
 source ./tools/phpbrew.sh
 source ./tools/terraform.sh
+source ./tools/jules.sh
 
 url="https://github.com/schorts99"
 text="schorts"
@@ -51,7 +52,8 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "12. PyENV"        " - Simple Python version management" \
     "13. Python"       " - Powerful, versatile programming language" \
     "14. PHPbrew"      " - PHP version manager" \
-    "15. Terraform"    " - Infrastructure as code made simple"
+    "15. Terraform"    " - Infrastructure as code made simple" \
+		"16. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -102,3 +104,4 @@ setup_pyenv
 setup_python
 setup_phpbrew
 setup_terraform
+setup_jules
