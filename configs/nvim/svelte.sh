@@ -36,7 +36,7 @@ EOF
   if grep -qF "$SVELTE_IMPORT" "$MAIN_INIT"; then
     echo "  ✅ init.lua already imports $SVELTE_MODULE"
   else
-    printf '\n%s\n' "$SVELTE_IMPORT" >> "$MAIN_INIT"
+    echo -e "$SVELTE_IMPORT" >> "$MAIN_INIT"
     echo "  ➕ Added $SVELTE_IMPORT to $MAIN_INIT"
   fi
 

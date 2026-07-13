@@ -56,7 +56,7 @@ EOF
   if grep -qF "$VUE_IMPORT" "$MAIN_INIT"; then
     echo "  ✅ init.lua already imports $VUE_MODULE"
   else
-    printf '\n%s\n' "$VUE_IMPORT" >> "$MAIN_INIT"
+    echo -e "$VUE_IMPORT" >> "$MAIN_INIT"
     echo "  ➕ Added $VUE_IMPORT to $MAIN_INIT"
   fi
 
