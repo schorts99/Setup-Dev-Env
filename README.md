@@ -39,7 +39,7 @@ chmod +x config.sh
 
 ### 3. The Kitty Script (`kitty.sh`)
 
-Installs (kitty)[https://sw.kovidgoyal.net/kitty], a GPU based terminal emulator.
+Installs [Kitty](https://sw.kovidgoyal.net/kitty), a GPU-accelerated terminal emulator.
 
 ```bash
 chmod +x kitty.sh
@@ -77,3 +77,18 @@ The configuration logic is modular and idempotent, ensuring that settings are ap
   - LSP Integration: Configures bashls for Bash, Sh, and Zsh support.
   - Linting: Integrated support for shellcheck (via LSP) to catch common scripting pitfalls.
   - Formatting: Uses shfmt through conform.nvim to keep scripts clean and readable.
+- **Markdown Environment**:
+  - LSP Server: Integrates marksman for markdown and MDX linting.
+  - Code Formatting: prettier via conform.nvim for `.md` and `.mdx` files.
+  - Preview Mode: markdown-preview.nvim with keybindings (`<leader>mp` for toggle, `<leader>ms` for start, `<leader>mq` for stop).
+  - Global Dependencies: prettier and @fsouza/prettierd installed globally via pnpm.
+- **Node.js Development**:
+  - Dedicated configuration for Node.js development settings and tooling.
+- **NestJS Framework**:
+  - Framework-specific configuration for NestJS development.
+- **Vue.js Support**:
+  - Full Vue.js development environment with LSP and formatting support.
+- **Svelte Support**:
+  - Svelte framework configuration with language server integration.
+- **File Explorer**:
+  - Configured file navigation within NeoVim for efficient project browsing.
