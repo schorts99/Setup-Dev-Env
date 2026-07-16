@@ -9,6 +9,7 @@ source "$DIR/nvim/nest.sh"
 source "$DIR/nvim/vue.sh"
 source "$DIR/nvim/file_explorer.sh"
 source "$DIR/nvim/svelte.sh"
+source "$DIR/nvim/markdown.sh"
 
 config_nvim() {
   if ! command -v nvim >/dev/null 2>&1; then
@@ -35,6 +36,7 @@ config_nvim() {
 	config_nest
 	config_vue
 	config_svelte
+	config_markdown
 
 	LUA_MODULE="configs.$USER"
 	IMPORT_CMD="require('$LUA_MODULE')"
@@ -42,10 +44,10 @@ config_nvim() {
 	echo "🔗 Linking config to root init.lua"
 
 	if grep -qF "$IMPORT_CMD" "$ROOT_INIT"; then
-    echo "  ✅ Root init.lua already imports $LUA_MODULE"
+    echo " ✅ Root init.lua already imports $LUA_MODULE"
 	else
 		echo -e "\n$IMPORT_CMD" >> "$ROOT_INIT"
-		echo "  ➕ Added $IMPORT_CMD to $ROOT_INIT"
+		echo " ➕ Added $IMPORT_CMD to $ROOT_INIT"
 	fi
 
   echo "✅ NeoVim configured"

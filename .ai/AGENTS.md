@@ -66,6 +66,7 @@ Setup-Dev-Env/
 │       ├── nest.sh          # NestJS framework configuration
 │       ├── vue.sh           # Vue.js configuration
 │       ├── svelte.sh        # Svelte configuration
+│       ├── markdown.sh      # Markdown/MDX configuration
 │       └── file_explorer.sh # File explorer setup
 └── .git/                    # Git repository metadata
 ```
@@ -168,6 +169,15 @@ NeoVim configuration is modular:
 - **Linting**: shellcheck integration
 - **Formatting**: shfmt via conform.nvim
 
+### Markdown Environment (`markdown.sh`)
+- **LSP**: marksman for markdown/MDX linting
+- **Formatting**: prettier via conform.nvim for `.md` and `.mdx`
+- **Preview**: markdown-preview.nvim with keymaps
+  - `<leader>mp` - Toggle preview
+  - `<leader>ms` - Start preview
+  - `<leader>mq` - Stop preview
+- **Global Dependencies**: prettier, @fsouza/prettierd (via pnpm)
+
 ### Framework-Specific Configs
 - **Node.js** (`node.sh`) - Node development settings
 - **NestJS** (`nest.sh`) - NestJS framework configuration
@@ -251,8 +261,10 @@ Get script's directory (used in configs/nvim.sh)
 | Homebrew | 31 | Installer |
 | PyENV | 44 | Installer (largest) |
 | Terraform | 14 | Installer (smallest) |
+| Markdown Config | 67 | NeoVim config |
 | **Total Tools** | **320** | Installers |
-| **Total Project** | **386** | All scripts |
+| **Total NeoVim Configs** | **626** | Config modules |
+| **Total Project** | **~1100** | All scripts |
 
 ---
 
@@ -396,12 +408,27 @@ Based on project structure:
 ## 📚 Key Documentation References
 
 - **Git Commit History** - Last 10 commits tracked in `.git/`
-  - Most recent: Jules tool addition
+  - Most recent: Markdown NeoVim configuration added
   - Pattern: Incremental feature additions and bug fixes
   
 - **Main README** - Comprehensive usage guide and overview
   
 - **Inline Comments** - Minimal but functional within scripts
+
+---
+
+## 🆕 Recent Additions
+
+### Markdown Configuration (`configs/nvim/markdown.sh`)
+**Purpose**: Full markdown and MDX editing support in NeoVim
+**Features**:
+- **LSP Server**: marksman (installed via Homebrew)
+- **Code Formatting**: prettier + prettierd (global npm packages)
+- **Preview Mode**: markdown-preview.nvim with keybindings
+- **Auto-formatting**: On-save formatting for `.md` and `.mdx` files
+- **MDX Support**: Full support for markdown with JSX
+**Installation**: Auto-installs marksman via brew and npm globals via pnpm
+**Lines**: 67 lines of modular, idempotent bash + Lua configuration
 
 ---
 
