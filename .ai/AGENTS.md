@@ -53,7 +53,8 @@ Setup-Dev-Env/
 │   ├── antigravity.sh       # Antigravity build tool setup
 │   ├── phpbrew.sh           # PHP version manager
 │   ├── terraform.sh         # Terraform IaC tool
-│   └── jules.sh             # Jules tool
+│   ├── jules.sh             # Jules tool
+│   └── codex.sh             # Codex end-to-end task completion agent
 ├── configs/                 # Configuration scripts
 │   ├── nvim.sh              # Main NeoVim configuration orchestrator
 │   ├── git.sh               # Git configuration
@@ -98,6 +99,7 @@ Setup-Dev-Env/
 - **GitHub Copilot CLI** - AI-powered coding companion (13 lines)
 - **Antigravity** - Build/debug/ship tool (14 lines)
 - **Jules** - Development utility (13 lines)
+- **Codex** - End-to-end task completion agent (13 lines)
 
 ### Editor Configurations
 - **NvChad** - Pre-configured NeoVim framework (29 lines)
@@ -260,11 +262,12 @@ Get script's directory (used in configs/nvim.sh)
 | kitty.sh | ~30 | Installer |
 | Homebrew | 31 | Installer |
 | PyENV | 44 | Installer (largest) |
-| Terraform | 14 | Installer (smallest) |
+| Terraform | 14 | Installer |
+| Codex | 13 | Installer |
 | Markdown Config | 67 | NeoVim config |
-| **Total Tools** | **320** | Installers |
+| **Total Tools** | **333** | Installers |
 | **Total NeoVim Configs** | **626** | Config modules |
-| **Total Project** | **~1100** | All scripts |
+| **Total Project** | **~1113** | All scripts |
 
 ---
 
@@ -418,6 +421,16 @@ Based on project structure:
 ---
 
 ## 🆕 Recent Additions
+
+### Codex Agent (`tools/codex.sh`)
+**Purpose**: End-to-end task completion for complex development work
+**Features**:
+- Completes tasks end-to-end like building features
+- Handles complex refactors across codebases
+- Manages database migrations and schema changes
+- Orchestrates multi-step development workflows
+**Installation**: Via Homebrew (primary method)
+**Lines**: 13 lines of modular, idempotent bash installation
 
 ### Markdown Configuration (`configs/nvim/markdown.sh`)
 **Purpose**: Full markdown and MDX editing support in NeoVim
