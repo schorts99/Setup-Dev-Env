@@ -54,7 +54,7 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "13. Python"       " - Powerful, versatile programming language" \
     "14. PHPbrew"      " - PHP version manager" \
     "15. Terraform"    " - Infrastructure as code made simple" \
-		"16. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features"
+		"16. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features" \
 		"17. Codex"				 " - Completes tasks end to end, like building features, complex refactors, migrations, and more"
 
 echo -e ""
