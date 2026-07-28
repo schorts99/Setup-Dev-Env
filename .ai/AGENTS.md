@@ -33,11 +33,11 @@ The approach is **modular**, **idempotent**, and **reusable**, using shell sourc
 
 ```
 Setup-Dev-Env/
-├── README.md                 # Project documentation
-├── setup.sh                  # Main setup orchestrator (installs binaries)
-├── config.sh                 # Main config orchestrator (applies settings)
-├── kitty.sh                  # Terminal emulator installation script
-├── tools/                    # Tool-specific installation scripts (320 lines total)
+├── README.md                # Project documentation
+├── setup.sh                 # Main setup orchestrator (installs binaries)
+├── config.sh                # Main config orchestrator (applies settings)
+├── kitty.sh                 # Terminal emulator installation script
+├── tools/                   # Tool-specific installation scripts (320 lines total)
 │   ├── homebrew.sh          # Package manager setup
 │   ├── git.sh               # Git configuration
 │   ├── github.sh            # GitHub CLI setup
@@ -48,13 +48,15 @@ Setup-Dev-Env/
 │   ├── nvchad.sh            # NvChad configuration framework
 │   ├── pyenv.sh             # Python version manager (44 lines)
 │   ├── python.sh            # Python installation
-│   ├── claude_code.sh        # Claude Code agent setup
+│   ├── claude_code.sh       # Claude Code agent setup
 │   ├── copilot.sh           # GitHub Copilot CLI setup
 │   ├── antigravity.sh       # Antigravity build tool setup
 │   ├── phpbrew.sh           # PHP version manager
 │   ├── terraform.sh         # Terraform IaC tool
 │   ├── jules.sh             # Jules tool
-│   └── codex.sh             # Codex end-to-end task completion agent
+│   ├── codex.sh             # Codex end-to-end task completion agent
+│   ├── mise.sh              # Mise dev tools manager installation
+│   └── ruby.sh              # Ruby setup via Mise
 ├── configs/                 # Configuration scripts
 │   ├── nvim.sh              # Main NeoVim configuration orchestrator
 │   ├── git.sh               # Git configuration
@@ -81,6 +83,7 @@ Setup-Dev-Env/
 - **FNM** - Fast Node.js version manager (13 lines)
 - **PyENV** - Python version manager (44 lines)
 - **PNPM** - Fast, disk-efficient Node package manager (15 lines)
+- **Mise** - One tool that manages dev tools, env vars, and tasks per project.
 
 ### Core Developer Tools
 - **Git** - Version control (19 lines)
@@ -93,6 +96,7 @@ Setup-Dev-Env/
 - **Python** - Python runtime via PyENV (16 lines)
 - **PHP** - PHP runtime via phpbrew (25 lines)
 - **Terraform** - Infrastructure as Code (14 lines)
+- **Ruby** - Ruby runtime via Mise
 
 ### AI & Development Agents
 - **Claude Code** - Agentic coding assistant (13 lines)

@@ -18,6 +18,7 @@ source ./tools/terraform.sh
 source ./tools/jules.sh
 source ./tools/codex.sh
 source ./tools/mise.sh
+source ./tools/ruby.sh
 
 url="https://github.com/schorts99"
 text="schorts"
@@ -57,7 +58,8 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "15. Terraform"    " - Infrastructure as code made simple" \
 		"16. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features" \
 		"17. Codex"				 " - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
-		"18. Mise"				 " - One tool that manages dev tools, env vars, and tasks per project"
+		"18. Mise"				 " - One tool that manages dev tools, env vars, and tasks per project" \
+		"19. Ruby"				 " - Ruby is an interpreted object-oriented programming language often used for web development"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -111,3 +113,4 @@ setup_terraform
 setup_jules
 setup_codex
 setup_mise
+setup_ruby
