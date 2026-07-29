@@ -96,21 +96,21 @@ if ! grep -Fq "$PATH_LINE" "$CONF_FILE"; then
 fi
 
 setup_homebrew
-setup_git
-setup_github
-setup_neovim
-setup_fnm
-setup_nodejs
-setup_pnpm
-setup_nvchad
-setup_claude_code
-setup_copilot
-setup_antigravity
-setup_pyenv
-setup_python
-setup_phpbrew
-setup_terraform
-setup_jules
-setup_codex
-setup_mise
-setup_ruby
+# setup_git
+# setup_github
+# setup_neovim
+# setup_fnm
+# setup_nodejs
+# setup_pnpm
+# setup_nvchad
+# setup_claude_code
+# setup_copilot
+# setup_antigravity
+# setup_pyenv
+# setup_python
+# setup_phpbrew
+# setup_terraform
+# setup_jules
+# setup_codex
+# setup_mise
+# setup_ruby
