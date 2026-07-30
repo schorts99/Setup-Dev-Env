@@ -4,7 +4,6 @@ source ./tools/homebrew.sh
 source ./tools/github.sh
 source ./tools/git.sh
 source ./tools/neovim.sh
-source ./tools/fnm.sh
 source ./tools/nodejs.sh
 source ./tools/pnpm.sh
 source ./tools/nvchad.sh
@@ -45,7 +44,7 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "02. Homebrew"     " - The missing package manager for macOS (and Linux)" \
     "03. GitHub CLI"   " - GitHub right in your terminal" \
     "04. NeoVim"       " - Hyperextensible Vim-based text editor" \
-    "05. FNM"          " - Fast Node.js version manager" \
+		"05. Mise"				 " - One tool that manages dev tools, env vars, and tasks per project" \
     "06. Node.js"      " - JavaScript runtime built on Chrome's V8 engine" \
     "07. PNPM"         " - Fast, disk-efficient package manager" \
     "08. NvChad"       " - Beautiful, blazing-fast Neovim config" \
@@ -58,8 +57,7 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "15. Terraform"    " - Infrastructure as code made simple" \
 		"16. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features" \
 		"17. Codex"				 " - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
-		"18. Mise"				 " - One tool that manages dev tools, env vars, and tasks per project" \
-		"19. Ruby"				 " - Ruby is an interpreted object-oriented programming language often used for web development"
+		"18. Ruby"				 " - Ruby is an interpreted object-oriented programming language often used for web development"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -99,7 +97,7 @@ setup_homebrew
 setup_git
 setup_github
 setup_neovim
-# setup_fnm
+setup_mise
 # setup_nodejs
 # setup_pnpm
 # setup_nvchad
@@ -112,5 +110,4 @@ setup_neovim
 # setup_terraform
 # setup_jules
 # setup_codex
-# setup_mise
 # setup_ruby
