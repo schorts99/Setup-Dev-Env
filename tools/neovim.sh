@@ -1,18 +1,22 @@
 setup_neovim() {
   if command -v nvim >/dev/null 2>&1; then
-    echo "✅ NeoVim is already installed"
+    echo -e "${GREEN}✅ NeoVim is already installed${NC}"
     
     return 0
   fi
 
-  echo "Starting NeoVim installation..."
+  echo "${YELLOW}📦 Starting NeoVim installation...${NC}"
 
 	if ! command -v unzip >/dev/null 2>&1; then
+		echo -e "${BLUE}  ➡ Installing unzip...${NC}"
+		
 		brew install unzip
+
+		echo -e "${GREEN}  ✔ unzip installed${NC}"
 	fi
 
   brew install neovim
   
-  echo "✅ NeoVim installed"
+  echo -e "${GREEN}✅ NeoVim installed successfully!${NC}"
 }
 
