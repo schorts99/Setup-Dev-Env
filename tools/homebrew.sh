@@ -31,7 +31,7 @@ setup_homebrew() {
 
       brew install --quiet gcc
 
-			echo -e "${GREEN}  ✔  gcc installed${NC}"
+			echo -e "${GREEN}  ✔ gcc installed${NC}"
     fi
   fi
 

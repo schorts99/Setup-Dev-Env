@@ -96,7 +96,7 @@ if ! grep -Fq "$PATH_LINE" "$CONF_FILE"; then
 fi
 
 setup_homebrew
-# setup_git
+setup_git
 # setup_github
 # setup_neovim
 # setup_fnm
