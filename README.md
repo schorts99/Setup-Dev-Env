@@ -8,7 +8,7 @@ This repository is designed for developers who want a "batteries-included" termi
 
 ### 📦 Tools Installed
 
-- **Package Managers**: Homebrew, FNM (Node), PyENV (Python), PNPM.
+- **Package Managers**: Homebrew, Mise, PyENV (Python), PNPM.
 - **Editor**: [NeoVim](https://neovim.io) with [NvChad](https://nvchad.com) for a blazing-fast, beautiful UI.
 - **AI Agents**:
   - **Claude Code**: Agentic coding in the terminal.
@@ -51,9 +51,9 @@ chmod +x kitty.sh
 
 The script ensures you aren't just using "System" languages, but manageable versions:
 
-### Node.js (via FNM)
+### Node.js (via Mise)
 
-Uses FNM (Fast Node Manager) to handle versions. This allows for lightning-fast switching between Node releases and keeps your global environment clean.
+Uses Mise to handle versions. This allows for lightning-fast switching between Node releases and keeps your global environment clean.
 
 ### Python (via PyENV)
 
