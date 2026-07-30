@@ -1,16 +1,20 @@
 setup_github() {
   if command -v gh >/dev/null 2>&1; then
-    echo "✅ GitHub is already installed"
+    echo -e "${GREEN}✅ GitHub is already installed${NC}"
     
     return 0
   fi
 
 
-  echo "Starting GitHub installation..."
+  echo -e "${YELLOW}📦 Starting GitHub installation...${NC}"
 
   brew install gh
+	
+	echo -e "${BLUE}  ➡ Configuring GitHub...${NC}"
+
   gh auth login
 
-  echo "✅ GitHub installed"
+	echo -e "${GREEN}  ✔ GitHub configured${NC}"
+  echo -e "${GREEN}✅ GitHub installed successfully!${NC}"
 }
 

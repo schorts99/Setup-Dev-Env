@@ -97,7 +97,7 @@ fi
 
 setup_homebrew
 setup_git
-# setup_github
+setup_github
 # setup_neovim
 # setup_fnm
 # setup_nodejs

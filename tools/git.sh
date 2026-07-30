@@ -9,7 +9,7 @@ setup_git() {
 
   sudo apt-get install -y git
 
-	echo -e "${BLUE}  ➡ Configuring git...${NC}"
+	echo -e "${BLUE}  ➡ Configuring Git...${NC}"
 
   read -p "  Enter your name: " USER_NAME
   read -p "  Enter your email: " USER_EMAIL
