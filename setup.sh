@@ -100,7 +100,7 @@ setup_neovim
 setup_mise
 setup_nodejs
 setup_pnpm
-# setup_nvchad
+setup_nvchad
 # setup_claude_code
 # setup_copilot
 # setup_antigravity
