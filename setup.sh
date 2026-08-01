@@ -102,7 +102,7 @@ setup_nodejs
 setup_pnpm
 setup_nvchad
 setup_claude_code
-# setup_copilot
+setup_copilot
 # setup_antigravity
 # setup_pyenv
 # setup_python

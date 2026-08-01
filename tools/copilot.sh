@@ -1,13 +1,13 @@
 setup_copilot() {
   if command -v copilot >/dev/null 2>&1; then
-    echo "✅ Copilot is already installed"
+    echo -e "${GREEN}✅ Copilot is already installed${NC}"
     
     return 0
   fi
 
-  echo "Starting Copilot installation..."
+  echo -e "${YELLOW}📦 Starting Copilot installation...${NC}"
 
   brew install copilot-cli
 
-  echo "✅ Copilot installed"
+  echo -e "${GREEN}✅ Copilot installed successfully!${NC}"
 }
