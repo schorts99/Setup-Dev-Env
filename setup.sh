@@ -107,4 +107,4 @@ setup_php
 setup_terraform
 setup_jules
 setup_codex
-# setup_ruby
+setup_ruby

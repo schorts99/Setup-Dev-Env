@@ -36,7 +36,6 @@ setup_php() {
 			libwebp-dev
 			libfreetype6-dev
     )
-
 		local missing=()
 
 		for pkg in "${packages[@]}"; do

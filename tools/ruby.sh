@@ -1,20 +1,44 @@
 setup_ruby() {
 	if command -v ruby >/dev/null 2>&1; then
-		echo "✅ Ruby is already installed"
+		echo -e "${GREEN}✅ Ruby is already installed${NC}"
 
 		return 0
 	fi
 
-	echo "Starting Ruby installation..."
+	echo "${GREEN}📦 Starting Ruby installation...${NC}"
 
 	os="$(uname -s)"
 
 	if [[ "$os" == "Linux" ]]; then
-		sudo apt install build-essential rustc libssl-dev libyaml-dev zlib1g-dev libgmp-dev
+		local packages=(
+			build-essential
+			rustc
+			libssl-dev
+			libyaml-dev
+			zlib1g-dev
+			libgmp-dev
+		)
+		local missing=()
+
+		for pkg in "${packages[@]}"; do
+			if ! dpkg -s "$pkg" &>/dev/null; then
+				missing+=("$pkg")
+			fi
+		done
+
+		if (( ${#missing[@]} > 0 )); then
+			echo -e "${BLUE}  ➡ Installing ${missing[*]}...${NC}"
+	
+			sudo apt install -y "${missing[@]}"
+
+			echo -e "${GREEN}  ✔ ${missing[*]} installed${NC}"
+		fi
+
 		mise settings ruby.compile=false
 	fi
 
-	mise use --global ruby@latest
+	mise install ruby@latest
+	mise use -g ruby@latest
 
 	if [[ "$SHELL" == *"zsh"* ]]; then
 		eval "$(mise env -s zsh)"
