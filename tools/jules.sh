@@ -1,13 +1,13 @@
 setup_jules() {
 	if command -v jules >/dev/null 2>&1; then
-		echo "✅ Jules is already installed"
+		echo -e "${GREEN}✅ Jules is already installed${NC}"
     
     return 0
 	fi
 
-	echo "Starting Jules installation..."
+	echo -e "${YELLOW}📦 Starting Jules installation...${NC}"
 
 	npm install -g @google/jules
 
-	echo "✅ Jules installed"
+	echo -e "${GREEN}✅ Jules installed successfully!${NC}"
 }

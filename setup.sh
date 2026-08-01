@@ -105,6 +105,6 @@ setup_antigravity
 setup_python
 setup_php
 setup_terraform
-# setup_jules
+setup_jules
 # setup_codex
 # setup_ruby
