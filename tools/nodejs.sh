@@ -5,10 +5,10 @@ setup_nodejs() {
     return 0
   fi
 
-	echo -e "${YELLOW}📦 Starting Node.js installation..."
+	echo -e "${YELLOW}📦 Starting Node.js installation...${NC}"
 
 	mise install node@latest
 	mise use --global node@latest
 
-  echo -e "✅ Node.js installed successfully!${NC}"
+  echo -e "${GREEN}✅ Node.js installed successfully!${NC}"
 }
