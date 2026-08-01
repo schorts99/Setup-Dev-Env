@@ -102,7 +102,7 @@ setup_nvchad
 setup_claude_code
 setup_copilot
 setup_antigravity
-# setup_python
+setup_python
 # setup_phpbrew
 # setup_terraform
 # setup_jules

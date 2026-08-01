@@ -1,16 +1,22 @@
 setup_python() {
-  if command -v python >/dev/null 2>&1 || command -v python3 >/dev/null 2>&1; then
-    echo "✅ Python is already installed"
+	if mise where python &>/dev/null; then
+    echo -e "${GREEN}✅ Python is already installed${NC}"
     
     return 0
   fi
 
-  echo "Starting Python installation..."
+  echo -e "${YELLOW}📦 Starting Python installation...${NC}"
 
-  brew install tcl-tk
-  pyenv install 3
-  pyenv global 3
-  eval "$(pyenv init -)"
+	if ! command -v wish &> /dev/null; then
+		echo -e "${BLUE}  ➡ Installing tcl-tk...${NC}"
 
-  echo "✅ Python installed"
+		brew install tcl-tk
+
+		echo -e "${GREEN}  ✔ tcl-tk installed${NC}"
+	fi
+
+	mise install python@latest
+	mise use --global python@latest
+
+  echo -e "${GREEN}✅ Python installed successfully!${NC}"
 }
