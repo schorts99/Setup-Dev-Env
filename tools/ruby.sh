@@ -5,7 +5,7 @@ setup_ruby() {
 		return 0
 	fi
 
-	echo "${GREEN}📦 Starting Ruby installation...${NC}"
+	echo -e "${GREEN}📦 Starting Ruby installation...${NC}"
 
 	os="$(uname -s)"
 
@@ -48,5 +48,5 @@ setup_ruby() {
 
 	gem update --system
 
-	echo "✅ Ruby installed"
+	echo -e "${GREEN}✅ Ruby installed successfully!${NC}"
 }

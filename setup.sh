@@ -17,6 +17,7 @@ source ./tools/jules.sh
 source ./tools/codex.sh
 source ./tools/mise.sh
 source ./tools/ruby.sh
+source ./tools/ruby_on_rails.sh
 
 url="https://github.com/schorts99"
 text="schorts"
@@ -39,23 +40,24 @@ echo -e "${YELLOW}This script will install the following awesome tools:${NC}"
 echo -e ""
 
 printf "${BLUE}%-18s${NC}%s\n" \
-    "01. Git"          " - Distributed version control system" \
-    "02. Homebrew"     " - The missing package manager for macOS (and Linux)" \
-    "03. GitHub CLI"   " - GitHub right in your terminal" \
-    "04. NeoVim"       " - Hyperextensible Vim-based text editor" \
-		"05. Mise"				 " - One tool that manages dev tools, env vars, and tasks per project" \
-    "06. Node.js"      " - JavaScript runtime built on Chrome's V8 engine" \
-    "07. PNPM"         " - Fast, disk-efficient package manager" \
-    "08. NvChad"       " - Beautiful, blazing-fast Neovim config" \
-    "09. Claude Code"  " - Agentic coding assistant in your terminal" \
-    "10. Copilot"      " - AI-powered coding companion for the CLI" \
-    "11. Antigravity"  " - AI agent that builds, debugs, and ships from your terminal" \
-    "12. Python"       " - Powerful, versatile programming language" \
-		"13. PHP"					 " - A popular general-purpose scripting language" \
-    "14. Terraform"    " - Infrastructure as code made simple" \
-		"15. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features" \
-		"16. Codex"				 " - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
-		"17. Ruby"				 " - Ruby is an interpreted object-oriented programming language often used for web development"
+    "01. Git"						" - Distributed version control system" \
+    "02. Homebrew"			" - The missing package manager for macOS (and Linux)" \
+    "03. GitHub CLI"		" - GitHub right in your terminal" \
+    "04. NeoVim"				" - Hyperextensible Vim-based text editor" \
+		"05. Mise"					" - One tool that manages dev tools, env vars, and tasks per project" \
+    "06. Node.js"				" - JavaScript runtime built on Chrome's V8 engine" \
+    "07. PNPM"					" - Fast, disk-efficient package manager" \
+    "08. NvChad"				" - Beautiful, blazing-fast Neovim config" \
+    "09. Claude Code"		" - Agentic coding assistant in your terminal" \
+    "10. Copilot"				" - AI-powered coding companion for the CLI" \
+    "11. Antigravity"		" - AI agent that builds, debugs, and ships from your terminal" \
+    "12. Python"				" - Powerful, versatile programming language" \
+		"13. PHP"						" - A popular general-purpose scripting language" \
+    "14. Terraform"			" - Infrastructure as code made simple" \
+		"15. Jules"					" - Coding agent that helps you fix bugs, add documentation, and build new features" \
+		"16. Codex"					" - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
+		"17. Ruby"					" - Ruby is an interpreted object-oriented programming language often used for web development" \
+		"18. Ruby on Rails" " - Rails is a full-stack framework. It ships with all the tools needed to build amazing web apps"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -108,3 +110,4 @@ setup_terraform
 setup_jules
 setup_codex
 setup_ruby
+setup_ruby_on_rails
