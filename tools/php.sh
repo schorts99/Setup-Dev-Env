@@ -51,6 +51,46 @@ setup_php() {
 
 			echo -e "${GREEN}  ✔ ${missing[*]} installed${NC}"
 		fi
+	else
+		local packages=(
+			bison
+			re2c
+			pkg-config
+			icu4c
+			readline
+			libedit
+			zlib
+			openssl@3
+			libxml2
+			curl
+			sqlite
+			oniguruma
+			libzip
+			libpng
+			jpeg
+			webp
+			freetype
+			gd
+			libiconv
+			gettext
+			gmp
+			bzip2
+    )
+		local missing=()
+
+		for pkg in "${packages[@]}"; do
+			if ! brew list --formula "$pkg" &>/dev/null; then
+				missing+=("$pkg")
+			fi
+    done
+
+		if (( ${#missing[@]} > 0 )); then
+			echo -e "${BLUE}  ➡ Installing ${missing[*]}...${NC}"
+	
+			brew install "${missing[@]}"
+
+			echo -e "${GREEN}  ✔ ${missing[*]} installed${NC}"
+		fi
 	fi
 
 	mise install php@latest
