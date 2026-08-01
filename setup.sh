@@ -31,7 +31,7 @@ CYAN=$'\033[0;36m'
 NC=$'\033[0m'
 
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
-echo -e "${GREEN}   /_/\    Welcome from \e]8;;${url}\e\\${text}\e]8;;\e\\${NC}"
+printf '%b\n' "${GREEN}   /_/\    Welcome from "$'\033]8;;'"${url}"$'\033\\'"${text}"$'\033]8;;\033\\'"${NC}"
 echo -e "${GREEN}  ( o.o )  ${NC}"
 echo -e "${GREEN}   > ^ <   Your new dev environment setup buddy!${NC}"
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
