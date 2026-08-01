@@ -11,6 +11,7 @@ source ./tools/claude_code.sh
 source ./tools/copilot.sh
 source ./tools/antigravity.sh
 source ./tools/python.sh
+source ./tools/php.sh
 source ./tools/terraform.sh
 source ./tools/jules.sh
 source ./tools/codex.sh
@@ -50,10 +51,11 @@ printf "${BLUE}%-18s${NC}%s\n" \
     "10. Copilot"      " - AI-powered coding companion for the CLI" \
     "11. Antigravity"  " - AI agent that builds, debugs, and ships from your terminal" \
     "12. Python"       " - Powerful, versatile programming language" \
-    "13. Terraform"    " - Infrastructure as code made simple" \
-		"14. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features" \
-		"15. Codex"				 " - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
-		"16. Ruby"				 " - Ruby is an interpreted object-oriented programming language often used for web development"
+		"13. PHP"					 " - A popular general-purpose scripting language" \
+    "14. Terraform"    " - Infrastructure as code made simple" \
+		"15. Jules"        " - Coding agent that helps you fix bugs, add documentation, and build new features" \
+		"16. Codex"				 " - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
+		"17. Ruby"				 " - Ruby is an interpreted object-oriented programming language often used for web development"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -101,6 +103,7 @@ setup_claude_code
 setup_copilot
 setup_antigravity
 setup_python
+setup_php
 # setup_terraform
 # setup_jules
 # setup_codex
