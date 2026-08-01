@@ -1,13 +1,13 @@
 setup_codex() {
 	if command -v codex >/dev/null 2>&1; then
-    echo "✅ Codex is already installed"
+    echo -e "${GREEN}✅ Codex is already installed${NC}"
     
     return 0
   fi
 
-  echo "Starting Codex installation..."
+  echo -e "${YELLOW}📦 Starting Codex installation...${NC}"
 
 	brew install --cask codex
 
-  echo "✅ Codex installed"
+  echo -e "${GREEN}✅ Codex installed successfully!${NC}"
 }
