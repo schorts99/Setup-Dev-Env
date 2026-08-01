@@ -98,7 +98,7 @@ setup_git
 setup_github
 setup_neovim
 setup_mise
-# setup_nodejs
+setup_nodejs
 # setup_pnpm
 # setup_nvchad
 # setup_claude_code

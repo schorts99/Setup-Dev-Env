@@ -21,5 +21,5 @@ setup_mise() {
 
 	eval "$(~/.local/bin/mise activate)"
 
-	echo "✅ Mise installed"
+	echo "✅ Mise installed successfully!${NC}"
 }
