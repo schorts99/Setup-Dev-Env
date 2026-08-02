@@ -42,16 +42,14 @@ Setup-Dev-Env/
 │   ├── git.sh               # Git configuration
 │   ├── github.sh            # GitHub CLI setup
 │   ├── neovim.sh            # NeoVim installation
-│   ├── fnm.sh               # Fast Node Manager installation
 │   ├── nodejs.sh            # Node.js setup via FNM
 │   ├── pnpm.sh              # PNPM package manager
 │   ├── nvchad.sh            # NvChad configuration framework
-│   ├── pyenv.sh             # Python version manager (44 lines)
 │   ├── python.sh            # Python installation
+│   ├── php.sh               # PHP installation
 │   ├── claude_code.sh       # Claude Code agent setup
 │   ├── copilot.sh           # GitHub Copilot CLI setup
 │   ├── antigravity.sh       # Antigravity build tool setup
-│   ├── phpbrew.sh           # PHP version manager
 │   ├── terraform.sh         # Terraform IaC tool
 │   ├── jules.sh             # Jules tool
 │   ├── codex.sh             # Codex end-to-end task completion agent
@@ -80,8 +78,6 @@ Setup-Dev-Env/
 
 ### Package Managers
 - **Homebrew** - macOS/Linux package manager
-- **FNM** - Fast Node.js version manager (13 lines)
-- **PyENV** - Python version manager (44 lines)
 - **PNPM** - Fast, disk-efficient Node package manager (15 lines)
 - **Mise** - One tool that manages dev tools, env vars, and tasks per project.
 
@@ -129,13 +125,17 @@ Each tool script follows this pattern:
 ```bash
 setup_<tool>() {
   if command -v <tool> >/dev/null 2>&1; then
-    echo "✅ Tool is already installed"
+    echo -e "${GREEN}✅ Tool is already installed${NC}"
     return 0
   fi
   
-  echo "Starting installation..."
+  echo -e "${YELLOW}📦 Starting Tool installation...${NC}"
+  # Prerequisites in case there are
+  echo -e "${BLUE}  ➡ Installing prerequisites...${NC}"
+  # Prerequisites installation logic
+  echo -e "${GREEN}  ✔ prerequisites installed${NC}"
   # Installation logic
-  echo "✅ Tool installed"
+  echo -e "${GREEN}✅ Tool installed successfully!${NC}"
 }
 ```
 
@@ -265,7 +265,6 @@ Get script's directory (used in configs/nvim.sh)
 | config.sh | ~50 | Main orchestrator |
 | kitty.sh | ~30 | Installer |
 | Homebrew | 31 | Installer |
-| PyENV | 44 | Installer (largest) |
 | Terraform | 14 | Installer |
 | Codex | 13 | Installer |
 | Markdown Config | 67 | NeoVim config |
@@ -299,8 +298,8 @@ function_name
 ### 4. **Error Handling**
 ```bash
 if ! command -v tool >/dev/null 2>&1; then
-    echo "❌ Tool is not installed"
-    return 1
+  echo "❌ Tool is not installed"
+  return 1
 fi
 ```
 
@@ -476,7 +475,7 @@ Based on project structure:
 ## 📝 Summary for AI Tools
 
 **Purpose**: Automated development environment provisioning
-**Stack**: Bash, Homebrew, NeoVim, Node.js (FNM), Python (PyENV)
+**Stack**: Bash, Homebrew, NeoVim, Node.js (Mise), Python (Mise), PHP (Mise), Ruby (Mise)
 **Pattern**: Modular sourcing with idempotent setup/config functions
 **Key Principle**: Non-destructive, reusable, cross-platform automation
 **Target Users**: Developers who want automated, reproducible dev environments
@@ -494,4 +493,3 @@ Based on project structure:
 - Follow the module sourcing pattern
 - Document new features in README
 - Keep tool scripts focused and under 50 lines when possible
-
