@@ -18,6 +18,7 @@ source ./tools/codex.sh
 source ./tools/mise.sh
 source ./tools/ruby.sh
 source ./tools/ruby_on_rails.sh
+source ./tools/herdr.sh
 
 url="https://github.com/schorts99"
 text="schorts"
@@ -57,7 +58,8 @@ printf "${BLUE}%-18s${NC}%s\n" \
 		"15. Jules"					" - Coding agent that helps you fix bugs, add documentation, and build new features" \
 		"16. Codex"					" - Completes tasks end to end, like building features, complex refactors, migrations, and more" \
 		"17. Ruby"					" - Ruby is an interpreted object-oriented programming language often used for web development" \
-		"18. Ruby on Rails" " - Rails is a full-stack framework. It ships with all the tools needed to build amazing web apps"
+		"18. Ruby on Rails" " - Rails is a full-stack framework. It ships with all the tools needed to build amazing web apps" \
+		"19. Herdr"					" - Herdr is the runtime your coding agents live on"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -111,3 +113,4 @@ setup_jules
 setup_codex
 setup_ruby
 setup_ruby_on_rails
+setup_herdr

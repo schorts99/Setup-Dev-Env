@@ -55,7 +55,7 @@ The script ensures you aren't just using "System" languages, but manageable vers
 
 Uses Mise to handle versions. This allows for lightning-fast switching between Node releases and keeps your global environment clean.
 
-### Python (via PyENV)
+### Python (via Mise)
 
 Uses PyENV to manage multiple Python versions. This prevents conflicts between the macOS system Python and your project-specific requirements.
 

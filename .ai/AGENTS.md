@@ -54,6 +54,7 @@ Setup-Dev-Env/
 │   ├── jules.sh             # Jules tool
 │   ├── codex.sh             # Codex end-to-end task completion agent
 │   ├── mise.sh              # Mise dev tools manager installation
+│   ├── herdr.sh             # Herdr is the runtime your coding agents live on
 │   └── ruby.sh              # Ruby setup via Mise
 ├── configs/                 # Configuration scripts
 │   ├── nvim.sh              # Main NeoVim configuration orchestrator
@@ -86,6 +87,7 @@ Setup-Dev-Env/
 - **GitHub CLI** - GitHub from terminal (16 lines)
 - **NeoVim** - Text editor (18 lines)
 - **Kitty** - GPU-accelerated terminal emulator
+- **Herdr** - Herdr is the runtime your coding agents live on
 
 ### Language Runtimes
 - **Node.js** - JavaScript runtime via FNM (27 lines)
