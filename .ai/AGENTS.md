@@ -55,6 +55,7 @@ Setup-Dev-Env/
 │   ├── codex.sh             # Codex end-to-end task completion agent
 │   ├── mise.sh              # Mise dev tools manager installation
 │   ├── herdr.sh             # Herdr is the runtime your coding agents live on
+│   ├── grok.sh              # Grok CLI setup
 │   └── ruby.sh              # Ruby setup via Mise
 ├── configs/                 # Configuration scripts
 │   ├── nvim.sh              # Main NeoVim configuration orchestrator
@@ -102,6 +103,7 @@ Setup-Dev-Env/
 - **Antigravity** - Build/debug/ship tool (14 lines)
 - **Jules** - Development utility (13 lines)
 - **Codex** - End-to-end task completion agent (13 lines)
+- **Grok** - A powerful coding agent for complex coding work
 
 ### Editor Configurations
 - **NvChad** - Pre-configured NeoVim framework (29 lines)

@@ -15,6 +15,7 @@ This repository is designed for developers who want a "batteries-included" termi
   - **GitHub Copilot**: AI assistance for the CLI.
   - **Antigravity**: Build, debug, and ship from your terminal.
   - **Codex**: Complete tasks end-to-end like building features, complex refactors, and migrations.
+  - **Grok**: A powerful coding agent for complex coding work.
 
 ## 🛠 Usage
 
