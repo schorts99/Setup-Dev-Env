@@ -20,6 +20,7 @@ source ./tools/ruby.sh
 source ./tools/ruby_on_rails.sh
 source ./tools/herdr.sh
 source ./tools/grook.sh
+source ./tools/muse.sh
 
 url="https://github.com/schorts99"
 text="schorts"
@@ -61,7 +62,8 @@ printf "${BLUE}%-18s${NC}%s\n" \
 		"17. Ruby"					" - Ruby is an interpreted object-oriented programming language often used for web development" \
 		"18. Ruby on Rails" " - Rails is a full-stack framework. It ships with all the tools needed to build amazing web apps" \
 		"19. Herdr"					" - Herdr is the runtime your coding agents live on" \
-		"20. Grok"					" - A powerful coding agent for complex coding work"
+		"20. Grok"					" - A powerful coding agent for complex coding work" \
+		"21. Muse"					" - An agent for your most complex coding workstreams"
 
 echo -e ""
 echo -e "${CYAN}═══════════════════════════════════════════════════════${NC}"
@@ -117,3 +119,4 @@ setup_ruby
 setup_ruby_on_rails
 setup_herdr
 setup_grok
+setup_muse

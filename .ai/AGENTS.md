@@ -56,6 +56,7 @@ Setup-Dev-Env/
 │   ├── mise.sh              # Mise dev tools manager installation
 │   ├── herdr.sh             # Herdr is the runtime your coding agents live on
 │   ├── grok.sh              # Grok CLI setup
+│   ├── muse.sh              # Muse Code CLI setup
 │   └── ruby.sh              # Ruby setup via Mise
 ├── configs/                 # Configuration scripts
 │   ├── nvim.sh              # Main NeoVim configuration orchestrator
@@ -104,6 +105,7 @@ Setup-Dev-Env/
 - **Jules** - Development utility (13 lines)
 - **Codex** - End-to-end task completion agent (13 lines)
 - **Grok** - A powerful coding agent for complex coding work
+- **Muse** - An agent for your most complex coding workstreams
 
 ### Editor Configurations
 - **NvChad** - Pre-configured NeoVim framework (29 lines)
