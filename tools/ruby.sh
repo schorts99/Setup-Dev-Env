@@ -1,5 +1,5 @@
 setup_ruby() {
-	if command -v ruby >/dev/null 2>&1; then
+	if mise where ruby >/dev/null 2>&1; then
 		echo -e "${GREEN}✅ Ruby is already installed${NC}"
 
 		return 0
@@ -35,6 +35,28 @@ setup_ruby() {
 		fi
 
 		mise settings ruby.compile=false
+	else
+	  local packages=(
+      openssl@3
+      libyaml
+      gmp
+      rust
+    )
+    local missing=()
+
+    for pkg in "${packages[@]}"; do
+      if ! brew list --formula "$pkg" &>/dev/null; then
+        missing+=("$pkg")
+      fi
+    done
+
+    if (( ${#missing[@]} > 0 )); then
+      echo -e "${BLUE}  ➡ Installing ${missing[*]}...${NC}"
+
+      brew install "${missing[@]}"
+
+      echo -e "${GREEN}  ✔ ${missing[*]} installed${NC}"
+    fi
 	fi
 
 	mise install ruby@latest
