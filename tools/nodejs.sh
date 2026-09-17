@@ -1,5 +1,5 @@
 setup_nodejs() {
-  if command -v node >/dev/null 2>&1; then
+  if mise where node >/dev/null 2>&1; then
     echo -e "${GREEN}✅ Node.js is already installed${NC}"
     
     return 0
