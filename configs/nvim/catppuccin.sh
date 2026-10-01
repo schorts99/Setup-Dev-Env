@@ -71,15 +71,14 @@ EOF
   local CAT_MODULE="configs.$USER.catppuccin"
   local CAT_IMPORT="require('$CAT_MODULE')"
   
-	if grep -qF "$CAT_IMPORT" "$MAIN_INIT"; then
-    echo "  ✅ init.lua already imports $CAT_MODULE"
-  else
-    if [ -s "$MAIN_INIT" ]; then
-      sed -i "1i$CAT_IMPORT" "$MAIN_INIT"
-    else
-      echo -e "$CAT_IMPORT" >> "$MAIN_INIT"
-    fi
+	if ! grep -qF "$CAT_IMPORT" "$MAIN_INIT" 2>/dev/null; then
+    {
+      echo "$CAT_IMPORT"
+      cat "$MAIN_INIT" 2>/dev/null
+    } > "$MAIN_INIT.tmp" && mv "$MAIN_INIT.tmp" "$MAIN_INIT"
     echo "  ➕ Added $CAT_IMPORT"
+  else
+    echo "  ✅ init.lua already imports $CAT_MODULE"
   fi
 
   cat > "$LAZY_SPEC_FILE" <<'EOF'
