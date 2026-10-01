@@ -11,6 +11,7 @@ source "$DIR/nvim/file_explorer.sh"
 source "$DIR/nvim/svelte.sh"
 source "$DIR/nvim/markdown.sh"
 source "$DIR/nvim/react.sh"
+source "$DIR/nvim/catppuccin.sh"
 
 config_nvim() {
   if ! command -v nvim >/dev/null 2>&1; then
@@ -39,6 +40,7 @@ config_nvim() {
 	config_svelte
 	config_markdown
 	config_react
+	config_catppuccin
 
 	LUA_MODULE="configs.$USER"
 	IMPORT_CMD="require('$LUA_MODULE')"
