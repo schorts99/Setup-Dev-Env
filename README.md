@@ -17,6 +17,7 @@ This repository is designed for developers who want a "batteries-included" termi
   - **Codex**: Complete tasks end-to-end like building features, complex refactors, and migrations.
   - **Grok**: A powerful coding agent for complex coding work.
   - **Muse**: An agent for your most complex coding workstreams.
+  - **Ollama**: Run open-source LLMs locally for private, offline AI workflows.
 
 ## 🛠 Usage
 
