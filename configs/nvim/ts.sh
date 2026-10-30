@@ -1,26 +1,11 @@
 config_ts() {
 	echo "Configuring TypeScript"
 
-	GLOBAL_PKGS=(
-		"@types/node"
-		"@types/react"
-		"@types/react-dom"
-	)
+	ensure_pnpm_globals \
+		"@vtsls/language-server" \
+		"typescript"
 
-	if pnpm list -g "${GLOBAL_PKGS[0]}" > /dev/null 2>&1; then
-		echo "  ✅ Dependencies already installed"
-	else
-		pnpm add -g "${GLOBAL_PKGS[@]}"
-
-		echo "  ➕ Dependencies installed"
-	fi
-
-	NVIM_DIR="$HOME/.config/nvim"
-	CONF_DIR="$NVIM_DIR/lua/configs/$USER"
-	TS_CONF_FILE="$CONF_DIR/ts.lua"
-	MAIN_INIT="$CONF_DIR/init.lua"
-
-	cat << "EOF" > "$TS_CONF_FILE"
+	nvim_write_conf ts <<"EOF"
 if vim.lsp.config then
   vim.lsp.config("vtsls", {
     settings = {
@@ -44,28 +29,14 @@ end
 local status, conform = pcall(require, "conform")
 
 if status then
-  conform.formatters_by_ft.typescript = { "prettier" }
-  conform.formatters_by_ft.typescriptreact = { "prettier" }
-end
+  local prettier = { "prettierd", "prettier", stop_after_first = true }
 
-local status_tag, autotag = pcall(require, "nvim-ts-autotag")
-
-if status_tag then
-  autotag.setup()
+  conform.formatters_by_ft.typescript = prettier
+  conform.formatters_by_ft.typescriptreact = prettier
 end
 EOF
 
-	echo "  ✅ Configuration file created"
-
-	TS_MODULE="configs.$USER.ts"
-	TS_IMPORT="require('$TS_MODULE')"
-
-	if grep -qF "$TS_IMPORT" "$MAIN_INIT"; then
-		echo "  ✅ init.lua already imports $TS_MODULE"
-	else
-		echo -e "$TS_IMPORT" >> "$MAIN_INIT"
-		echo "  ➕ Added $TS_IMPORT to $MAIN_INIT"
-	fi
+	nvim_import_conf ts
 
 	echo "🎉 TypeScript configured"
 }

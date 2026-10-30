@@ -72,7 +72,7 @@ The configuration logic is modular and idempotent, ensuring that settings are ap
   - Automatically adds a clean -- Indentation Settings header in `init.lua` if missing.
 - **JavaScript Environment**:
   - LSP Integration: Configures vtsls using the native vim.lsp.config (Neovim 0.11+) standard.
-  - Formatting: Uses `conform.nvim` to enforce prettier for both `.js` and `.jsx` files.
+  - Formatting: Uses `conform.nvim` with prettierd (falling back to prettier) for both `.js` and `.jsx` files.
 - **TypeScript Environment**:
   - Advanced LSP: Enables Inlay Hints (parameter names, variable types, enum values) for deep code clarity.
   - DX Features: Enables updateImportsOnFileMove and function call suggestions.
@@ -84,15 +84,17 @@ The configuration logic is modular and idempotent, ensuring that settings are ap
 - **Markdown Environment**:
   - LSP Server: Integrates marksman for markdown and MDX linting.
   - Code Formatting: prettier via conform.nvim for `.md` and `.mdx` files.
-  - Preview Mode: markdown-preview.nvim with keybindings (`<leader>mp` for toggle, `<leader>ms` for start, `<leader>mq` for stop).
+  - Preview Mode: installs markdown-preview.nvim with buffer-local keybindings (`<leader>mp` for toggle, `<leader>ms` for start, `<leader>mq` for stop).
   - Global Dependencies: prettier and @fsouza/prettierd installed globally via pnpm.
 - **Node.js Development**:
   - Dedicated configuration for Node.js development settings and tooling.
 - **NestJS Framework**:
   - Framework-specific configuration for NestJS development.
 - **Vue.js Support**:
-  - Full Vue.js development environment with LSP and formatting support.
+  - vue_ls (v3) paired with vtsls + `@vue/typescript-plugin`, so a single TypeScript server handles `.ts`, `.tsx` and `.vue` files.
 - **Svelte Support**:
   - Svelte framework configuration with language server integration.
 - **File Explorer**:
-  - Configured file navigation within NeoVim for efficient project browsing.
+  - Hides build output (`node_modules`, `dist`, `.next`, `.nuxt`, `.svelte-kit`, ...) from nvim-tree and Telescope via a dedicated `lua/plugins/file_explorer.lua` spec.
+- **Treesitter**:
+  - Installs the tree-sitter CLI and parsers for every configured language, plus nvim-ts-autotag for HTML/JSX/Vue/Svelte tags.

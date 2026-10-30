@@ -1,17 +1,7 @@
 config_catppuccin() {
   echo "Configuring Catppuccin"
-  
-	local NVIM_DIR="$HOME/.config/nvim"
-  local CONF_DIR="$NVIM_DIR/lua/configs/$USER"
-  local CAT_CONF_FILE="$CONF_DIR/catppuccin.lua"
-  local MAIN_INIT="$CONF_DIR/init.lua"
-  local LAZY_SPEC_DIR="$NVIM_DIR/lua/plugins"
-  local LAZY_SPEC_FILE="$LAZY_SPEC_DIR/catppuccin.lua"
-  
-	mkdir -p "$CONF_DIR" "$LAZY_SPEC_DIR"
-  touch "$MAIN_INIT"
 
-  cat > "$CAT_CONF_FILE" <<'EOF'
+  nvim_write_conf catppuccin <<'EOF'
 local status, catppuccin = pcall(require, "catppuccin")
 if not status then
   vim.notify("catppuccin not found – install the plugin first (lazy)", vim.log.levels.WARN)
@@ -58,62 +48,43 @@ catppuccin.setup({
       enabled = true,
       indentscope_color = "",
     },
-    -- mason = true,
-    -- telescope = true,
-    -- which_key = true,
+    mason = true,
+    telescope = { enabled = true },
+    which_key = true,
   },
 })
 -- Load the colorscheme (must be after setup)
 vim.cmd.colorscheme "catppuccin"
 EOF
-  echo "  ✅ Configuration file created"
 
+  # Prepended so the colorscheme is applied before the other user modules load
   local CAT_MODULE="configs.$USER.catppuccin"
   local CAT_IMPORT="require('$CAT_MODULE')"
-  
-	if ! grep -qF "$CAT_IMPORT" "$MAIN_INIT" 2>/dev/null; then
+  local MAIN_INIT="$NVIM_CONF_DIR/init.lua"
+
+  touch "$MAIN_INIT"
+
+  if ! grep -qF "$CAT_IMPORT" "$MAIN_INIT"; then
     {
       echo "$CAT_IMPORT"
-      cat "$MAIN_INIT" 2>/dev/null
+      cat "$MAIN_INIT"
     } > "$MAIN_INIT.tmp" && mv "$MAIN_INIT.tmp" "$MAIN_INIT"
     echo "  ➕ Added $CAT_IMPORT"
   else
     echo "  ✅ init.lua already imports $CAT_MODULE"
   fi
 
-  cat > "$LAZY_SPEC_FILE" <<'EOF'
+  nvim_write_plugin_spec catppuccin <<EOF
 return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000, -- load before other plugins
   lazy = false,    -- make sure it loads on startup
   config = function()
-    -- real setup lives in configs/$USER/catppuccin.lua
+    -- real setup lives in lua/configs/$USER/catppuccin.lua
   end,
 }
 EOF
-  echo "  ✅ Lazy plugin spec created"
-
-  local LAZY_INIT="$NVIM_DIR/lua/config/lazy.lua"
-  local LAZY_PLUGINS="$NVIM_DIR/lua/plugins/init.lua"
-  local ROOT_INIT="$NVIM_DIR/init.lua"
-  local PLUGINS_IMPORTED=false
-  
-	for f in "$LAZY_INIT" "$ROOT_INIT" "$NVIM_DIR/lua/lazy.lua"; do
-    if [ -f "$f" ] && grep -qE 'plugins|import.*=.*"plugins"' "$f" 2>/dev/null; then
-      PLUGINS_IMPORTED=true
-      break
-    fi
-  done
-  if [ "$PLUGINS_IMPORTED" = false ] && [ ! -f "$LAZY_PLUGINS" ]; then
-    cat > "$LAZY_PLUGINS" <<'EOF'
--- Auto-collected plugin specs from lua/plugins/*.lua
-return {
-  { import = "plugins" },
-}
-EOF
-    echo "  ➕ Created $LAZY_PLUGINS"
-  fi
 
   local DATA_DIR
   DATA_DIR="$(nvim --headless +'lua io.write(vim.fn.stdpath("data"))' +qall 2>/dev/null)"
@@ -123,19 +94,17 @@ EOF
     echo "  ✅ Catppuccin already installed"
   else
     echo "  📦 Installing Catppuccin..."
-    
-		nvim --headless "+Lazy! sync" +qall >/dev/null 2>&1 || \
-    nvim --headless "+Lazy install catppuccin" +qall >/dev/null 2>&1 || true
+
+    nvim --headless "+Lazy! install catppuccin" +qall >/dev/null 2>&1 || true
 
     if [ -d "$CAT_DIR" ]; then
       echo "  ✅ Catppuccin installed"
     else
       echo "  ⚠️  Lazy install may need a manual :Lazy sync"
-      echo "     Plugin spec is ready at: $LAZY_SPEC_FILE"
     fi
   fi
 
   echo "🎉 Catppuccin configured"
-  echo "   Flavour: frappe  (edit $CAT_CONF_FILE to change)"
+  echo "   Flavour: frappe  (edit $NVIM_CONF_DIR/catppuccin.lua to change)"
   echo "   Available: latte | frappe | macchiato | mocha"
 }
